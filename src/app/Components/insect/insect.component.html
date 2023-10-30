@@ -1,0 +1,32 @@
+<p>Entrer un insecte en base de donnée</p>
+
+<form action="#">
+  <label for="sName">Scientific name</label>
+  <input type="text" id="sName" [(ngModel)]="testInsect.sName"  name="scientificFullname">
+  <label for="uName">Usual Name</label>
+  <input type="text" id="uName" [(ngModel)]="testInsect.uName"  name="usualName">
+  <label for="aspect">Aspect</label>
+  <input type="text" id="aspect" [(ngModel)]="testInsect.aspect"  name="aspect">
+  <button id="submitButton" (click)="addInsect($event)">Submit</button >
+
+
+
+</form>
+
+<table>
+  <tr>
+    <td>Scientific Name</td>
+    <td>Usual Name</td>
+    <td>Aspect</td>
+  </tr>
+  <tr *ngFor="let insect of insectTable | keyvalue">
+    <td>{{insect.value.scientificFullname}}</td>
+    <td>{{insect.value.usualName}}</td>
+    <td>{{insect.value.imgReference}}</td>
+    <td>
+      <button (click)="deleteInsect(insect.key)">Supress</button>
+    </td>
+  </tr>
+</table>
+
+
