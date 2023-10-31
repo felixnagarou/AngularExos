@@ -8,7 +8,7 @@ import insect from "../insect/Insect";
 })
 export class SupressionComponent {
 
-  public id:number
+  public id:number = 0
 
 
   @Output("sendInsectIdEvent")

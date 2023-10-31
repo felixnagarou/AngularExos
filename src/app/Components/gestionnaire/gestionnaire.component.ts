@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import Insect from "../insect/Insect";
+import {InsectDTO} from "../insect/InsectDTO";
 
 @Component({
   selector: 'app-gestionnaire',
@@ -7,7 +8,7 @@ import Insect from "../insect/Insect";
   styleUrls: ['./gestionnaire.component.css']
 })
 export class GestionnaireComponent {
-  public insectData:{ scientificFullname: string; usualName: string; imgReference: string } =  {
+  public insectData:InsectDTO =  {
     scientificFullname :"",
     usualName:"",
     imgReference: ""

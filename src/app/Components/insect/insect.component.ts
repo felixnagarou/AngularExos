@@ -30,4 +30,5 @@ export class InsectComponent {
 
 
   protected readonly Insect = Insect;
+  protected readonly insect = insect;
 }

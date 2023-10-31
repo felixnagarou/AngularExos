@@ -24,7 +24,7 @@
     <td>{{insect.value.usualName}}</td>
     <td><img src="{{insect.value.imgReference}}"  alt="" [ngStyle]="{ 'max-width' : '63%', 'margin-left': 'auto', 'margin-right':'auto', 'display' : 'flex' }"></td>
     <td>
-      <app-supression (sendInsectIdEvent)="deleteInsect($event)" )></app-supression>
+      <app-supression (sendInsectIdEvent)="deleteInsect(insect.key)"></app-supression>
       <!--button (click)="deleteInsect(insect.key)">Supress</button-->
     </td>
   </tr>
