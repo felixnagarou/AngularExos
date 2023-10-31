@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import Insect from "./Insect";
+import insect from "./Insect";
 
 
 @Component({
@@ -9,35 +10,23 @@ import Insect from "./Insect";
 })
 export class InsectComponent {
 
-
-  public testInsect ={
-    sName :"",
-    uName:"",
-    aspect: ""
-
-  }
+  @Input()
+  public insectTable= new Map<number, Insect>([])
 
 
-
-  public insectTable= new Map<Number, Insect>([])
-
-   addInsect(event:Event){
-    event.preventDefault()
-     const newInsect = new Insect(this.testInsect.sName, this.testInsect.uName, this.testInsect.aspect)
-    this.insectTable.set(newInsect.insectId, newInsect)
-  }
-
-  deleteInsect(id:Number){
+  deleteInsect(id:number){
     this.insectTable.delete(id)
+    Insect.count--
   }
 
-  displayGradient(){
+
+  getTableStyle(){
     return {
-      'color': this.insectTable.keys()
+      'margin': 'auto',
+      'width' :'75%',
+
     }
   }
-
-
 
 
   protected readonly Insect = Insect;

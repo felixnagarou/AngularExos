@@ -1,0 +1,15 @@
+<p>gestionnaire works!</p>
+
+<form action="#" (submit)="sendInsectDataToNewInsect($event)">
+  <label for="sName">Scientific name</label>
+  <input type="text" id="sName" [(ngModel)]="insectData.scientificFullname"  name="scientificFullname">
+  <label for="uName">Usual Name</label>
+  <input type="text" id="uName" [(ngModel)]="insectData.usualName"  name="usualName">
+  <label for="aspect">Aspect</label>
+  <input type="text" id="aspect" [(ngModel)]="insectData.imgReference"  name="aspect">
+  <button id="submitButton">Submit</button >
+</form>
+
+
+
+

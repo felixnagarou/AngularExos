@@ -2,7 +2,7 @@
 
 class Insect{
   public static count:number = 0
-  private id:Number
+  private id:number
   private _scientificFullname:string
   private _usualName:string
   private _imgReference:string
@@ -24,7 +24,7 @@ class Insect{
   get usualName(): string {
     return this._usualName;
   }
-  get insectId():Number{
+  get insectId():number{
     return this.id;
   }
 

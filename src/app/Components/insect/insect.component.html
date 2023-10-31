@@ -1,6 +1,8 @@
 <p>Entrer un insecte en base de donnée</p>
 
-<form action="#">
+<app-arborescence [arborDisplay]="Insect.count" ></app-arborescence>
+
+<!--form action="#">
   <label for="sName">Scientific name</label>
   <input type="text" id="sName" [(ngModel)]="testInsect.sName"  name="scientificFullname">
   <label for="uName">Usual Name</label>
@@ -8,25 +10,25 @@
   <label for="aspect">Aspect</label>
   <input type="text" id="aspect" [(ngModel)]="testInsect.aspect"  name="aspect">
   <button id="submitButton" (click)="addInsect($event)">Submit</button >
+</form -->
 
+<table [ngStyle]="getTableStyle()">
 
-
-</form>
-
-<table>
   <tr>
     <td>Scientific Name</td>
     <td>Usual Name</td>
     <td>Aspect</td>
   </tr>
-  <tr *ngFor="let insect of insectTable | keyvalue">
+  <tr *ngFor="let insect of insectTable | keyvalue" [ngStyle]="{backgroundColor : insect.key %2==0 ? 'white': 'gray'}">
     <td>{{insect.value.scientificFullname}}</td>
     <td>{{insect.value.usualName}}</td>
-    <td>{{insect.value.imgReference}}</td>
+    <td><img src="{{insect.value.imgReference}}"  alt="" [ngStyle]="{ 'max-width' : '63%', 'margin-left': 'auto', 'margin-right':'auto', 'display' : 'flex' }"></td>
     <td>
-      <button (click)="deleteInsect(insect.key)">Supress</button>
+      <app-supression (sendInsectIdEvent)="deleteInsect($event)" )></app-supression>
+      <!--button (click)="deleteInsect(insect.key)">Supress</button-->
     </td>
   </tr>
 </table>
+
 
 
